@@ -44,9 +44,10 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 " autocmd VimEnter * NERDTree /home/erols/projects/
-
-set autoindent
-set expandtab
-set softtabstop=2
-set shiftwidth=2
+autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
+autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+" set autoindent
+" set expandtab
+" set softtabstop=2
+" set shiftwidth=2
 map <silent> <C-n> :NERDTreeToggle<CR>
