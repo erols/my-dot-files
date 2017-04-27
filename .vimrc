@@ -55,3 +55,5 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 " set softtabstop=2
 " set shiftwidth=2
 map <silent> <C-n> :NERDTreeToggle<CR>
+" make airline permanent
+set laststatus=2
