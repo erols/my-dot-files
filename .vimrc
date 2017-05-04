@@ -2,8 +2,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax enable
 " add line numbers
-set relativenumber
-highlight LineNr ctermfg=black
+" set relativenumber
+highlight LineNr ctermfg=gray
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -14,6 +14,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'exitface/synthwave.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -50,10 +51,17 @@ filetype plugin indent on    " required
 " autocmd VimEnter * NERDTree /home/erols/projects/
 autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
-" set autoindent
-" set expandtab
-" set softtabstop=2
-" set shiftwidth=2
+" colorscheme 
+" set background=dark
+" color synthwave
+" 
+" if has('termguicolors')
+" 	set termguicolors " 24-bit terminal
+" else
+" 	let g:synthwave_termcolors=256 " 256 color mode
+" endif
+nmap <F3> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
+nnoremap <C-k> :call NumberToggle()<cr>
 map <silent> <C-n> :NERDTreeToggle<CR>
 " make airline permanent
 set laststatus=2
